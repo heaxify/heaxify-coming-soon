@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Fonts: Inter (base) + soft handwritten for headline -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -28,6 +27,7 @@
       margin: 0;
       min-height: 100vh;
       display: flex;
+      align-items: center;
       justify-content: center;
       background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -39,14 +39,12 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: flex-start;      /* move content up */
-      padding-top: 64px;           /* overall top offset */
     }
 
     .card {
       background: var(--card-bg);
       border-radius: 28px;
-      padding: 84px 84px 72px;
+      padding: 88px 84px;
       text-align: center;
       width: 100%;
       max-width: 1100px;
@@ -58,39 +56,34 @@
       overflow: hidden;
     }
 
-    /* DESKTOP DEFAULT */
+    /* DESKTOP */
     .logo {
       width: 920px;
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 22px;
+      margin: 0 auto 12px; /* ↓ yazıya yaklaştırıldı */
       transform: none;
     }
 
-    /* LAUNCHING SOON — softer, readable handwritten */
+    /* LAUNCHING SOON — 3x bigger */
     .launching {
-      font-family: 'Caveat', 'Inter', system-ui, sans-serif;
+      font-size: clamp(9rem, 10vw, 12rem); /* ~3 kat büyütüldü */
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 28px; /* üst boşluk kaldırıldı */
       text-transform: uppercase;
-      font-size: clamp(3.2rem, 3.4vw, 4.4rem);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin: 8px 0 24px;
-      line-height: 1;
+      line-height: 0.95;
     }
 
     .footer {
-      margin-top: 14px;
+      margin-top: 16px;
       font-size: 0.95rem;
       color: var(--text-soft);
     }
 
     /* TABLET + MOBILE */
     @media (max-width: 1024px) {
-      .wrapper {
-        padding-top: 40px;         /* a bit up on mobile too */
-      }
-
       .card {
         padding: 56px 28px;
         max-width: 860px;
@@ -100,19 +93,13 @@
         width: 2080px;
         max-width: 96vw;
         transform: translateX(-12%);
-        margin-bottom: 28px;
+        margin-bottom: 16px; /* mobilde de yaklaştır */
       }
 
       .launching {
-        font-size: clamp(2.8rem, 7vw, 3.8rem);
-        margin-bottom: 20px;
+        font-size: clamp(4.8rem, 14vw, 6.4rem); /* mobil için dengeli 3x */
+        margin-bottom: 24px;
       }
-    }
-
-    /* Very small screens */
-    @media (max-width: 420px) {
-      .wrapper { padding-top: 28px; }
-      .launching { letter-spacing: 0.01em; }
     }
   </style>
 </head>
