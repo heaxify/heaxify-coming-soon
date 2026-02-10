@@ -55,14 +55,14 @@
         0 0 40px var(--brand-glow);
     }
 
-    /* LOGO */
+    /* LOGO — larger, optically centered */
     .logo {
       width: 2080px;
       max-width: 96vw;
       height: auto;
       display: block;
-      margin: 0 auto 64px;
-      transform: translateX(-9%);
+      margin: 0 auto 32px;   /* ↓ 2 satır azaltıldı */
+      transform: translateX(-12%); /* ↓ iki harf kadar daha sola */
     }
 
     .launching {
@@ -80,7 +80,7 @@
 
     @media (max-width: 600px) {
       .card { padding: 56px 28px; }
-      .logo { margin-bottom: 48px; }
+      .logo { margin-bottom: 24px; }
     }
   </style>
 </head>
@@ -89,9 +89,7 @@
   <main class="wrapper">
     <section class="card">
       <img src="logo.png" alt="Heaxify logo" class="logo" />
-
       <div class="launching">Launching soon</div>
-
       <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
