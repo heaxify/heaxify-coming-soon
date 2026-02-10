@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,23 +17,19 @@
       --text-main: #0f172a;
       --text-soft: #475569;
 
-      /* Heaxify turquoise */
       --brand: #14b8b0;
       --brand-glow: rgba(20, 184, 176, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
+      background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-main);
     }
@@ -46,7 +41,6 @@
       justify-content: center;
     }
 
-    /* CARD WITH TURQUOISE FRAME */
     .card {
       background: var(--card-bg);
       border-radius: 28px;
@@ -54,7 +48,6 @@
       text-align: center;
       max-width: 860px;
       width: 100%;
-
       border: 4px solid var(--brand);
       box-shadow:
         0 0 0 6px rgba(20, 184, 176, 0.08),
@@ -62,14 +55,15 @@
         0 0 40px var(--brand-glow);
     }
 
-    /* LOGO — 3x MORE */
+    /* LOGO — centered + 4x larger */
     .logo {
-      width: 520px;
-      max-width: 85vw;
-      margin-bottom: 64px;
+      width: 2080px;          /* 520 * 4 */
+      max-width: 96vw;        /* prevents overflow on mobile */
+      height: auto;
+      display: block;         /* important for centering */
+      margin: 0 auto 64px;    /* centers horizontally */
     }
 
-    /* LAUNCHING SOON — 3x */
     .launching {
       font-size: clamp(3.6rem, 6vw, 4.8rem);
       font-weight: 600;
@@ -84,13 +78,10 @@
     }
 
     @media (max-width: 600px) {
-      .card {
-        padding: 56px 28px;
-      }
+      .card { padding: 56px 28px; }
 
-      .logo {
-        width: 420px;
-      }
+      /* Optional: slightly tighter spacing on small screens */
+      .logo { margin-bottom: 48px; }
     }
   </style>
 </head>
@@ -98,22 +89,11 @@
 <body>
   <main class="wrapper">
     <section class="card">
-      <!-- LOGO -->
-      <img
-        src="logo.png"
-        alt="Heaxify logo"
-        class="logo"
-      />
+      <img src="logo.png" alt="Heaxify logo" class="logo" />
 
-      <!-- MAIN TEXT -->
-      <div class="launching">
-        Launching soon
-      </div>
+      <div class="launching">Launching soon</div>
 
-      <!-- FOOTER -->
-      <div class="footer">
-        © 2026 Heaxify
-      </div>
+      <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
 </body>
