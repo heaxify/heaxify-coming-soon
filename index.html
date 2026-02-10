@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +17,6 @@
       --text-main: #0f172a;
       --text-soft: #475569;
 
-      /* Heaxify turquoise */
       --brand: #14b8b0;
       --brand-glow: rgba(20, 184, 176, 0.35);
     }
@@ -37,68 +35,67 @@
     }
 
     .wrapper {
-      padding: 24px;
+      padding: 28px;
       width: 100%;
       display: flex;
       justify-content: center;
     }
 
-    /* CARD WITH TURQUOISE FRAME */
     .card {
       background: var(--card-bg);
       border-radius: 28px;
-      padding: 72px 64px;
+      padding: 88px 84px;
       text-align: center;
-      max-width: 860px;
       width: 100%;
+      max-width: 1100px; /* desktop'ta daha geniş */
       border: 4px solid var(--brand);
       box-shadow:
         0 0 0 6px rgba(20, 184, 176, 0.08),
         0 25px 60px rgba(15, 23, 42, 0.08),
         0 0 40px var(--brand-glow);
+      overflow: hidden; /* kart dışına taşma olursa gizle */
     }
 
-    /* LOGO — desktop (clean centered) */
+    /* DESKTOP DEFAULT: Logo kartı ASLA taşmasın */
     .logo {
-      width: 1200px;       /* desktop size */
-      max-width: 90vw;
+      width: 920px;        /* desktop için ideal */
+      max-width: 100%;     /* kritik: kart genişliğini aşamaz */
       height: auto;
       display: block;
-      margin: 0 auto 32px; /* logo ↔ text spacing */
-      transform: none;     /* no optical offset on desktop */
+      margin: 0 auto 28px;
+      transform: none;     /* desktop'ta optik kaydırma yok */
     }
 
-    /* LAUNCHING SOON */
     .launching {
-      font-size: clamp(3.2rem, 5vw, 4.4rem);
+      font-size: clamp(3rem, 3.6vw, 4.1rem);
       font-weight: 600;
       letter-spacing: -0.02em;
-      margin-bottom: 32px;
+      margin: 18px 0 28px;
     }
 
     .footer {
-      margin-top: 24px;
-      font-size: 0.9rem;
+      margin-top: 16px;
+      font-size: 0.95rem;
       color: var(--text-soft);
     }
 
-    /* Mobile/Tablet: keep big logo + optical centering */
+    /* TABLET + MOBILE: Senin beğendiğin görüntü korunur */
     @media (max-width: 1024px) {
-      .card { padding: 56px 28px; }
+      .card {
+        padding: 56px 28px;
+        max-width: 860px;
+      }
 
       .logo {
-        width: 2080px;         /* big on mobile */
-        max-width: 96vw;
-        transform: translateX(-12%);
+        width: 2080px;       /* mobilde büyük */
+        max-width: 96vw;     /* mobilde ekrana sığ */
+        transform: translateX(-12%); /* mobilde optik merkez */
         margin-bottom: 32px;
       }
-    }
 
-    /* Desktop: a bit more breathing room */
-    @media (min-width: 1024px) {
-      .card {
-        padding-top: 96px;
-        padding-bottom: 96px;
+      .launching {
+        font-size: clamp(2.6rem, 7vw, 3.6rem);
+        margin-bottom: 24px;
       }
     }
   </style>
@@ -107,13 +104,8 @@
 <body>
   <main class="wrapper">
     <section class="card">
-      <!-- LOGO -->
       <img src="logo.png" alt="Heaxify logo" class="logo" />
-
-      <!-- MAIN TEXT -->
       <div class="launching">Launching soon</div>
-
-      <!-- FOOTER -->
       <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
