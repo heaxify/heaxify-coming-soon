@@ -62,16 +62,16 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 12px; /* ↓ yazıya yaklaştırıldı */
+      margin: 0 auto 14px;
       transform: none;
     }
 
-    /* LAUNCHING SOON — 3x bigger */
+    /* LAUNCHING SOON — ~2x size */
     .launching {
-      font-size: clamp(9rem, 10vw, 12rem); /* ~3 kat büyütüldü */
+      font-size: clamp(6rem, 7vw, 7.5rem); /* 2x dengeli */
       font-weight: 600;
       letter-spacing: -0.01em;
-      margin: 0 0 28px; /* üst boşluk kaldırıldı */
+      margin: 0 0 28px;
       text-transform: uppercase;
       line-height: 0.95;
     }
@@ -93,11 +93,11 @@
         width: 2080px;
         max-width: 96vw;
         transform: translateX(-12%);
-        margin-bottom: 16px; /* mobilde de yaklaştır */
+        margin-bottom: 16px;
       }
 
       .launching {
-        font-size: clamp(4.8rem, 14vw, 6.4rem); /* mobil için dengeli 3x */
+        font-size: clamp(3.6rem, 11vw, 4.8rem); /* mobil ~2x */
         margin-bottom: 24px;
       }
     }
