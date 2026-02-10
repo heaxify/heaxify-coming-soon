@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
+  <!-- Modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +18,7 @@
       --text-main: #0f172a;
       --text-soft: #475569;
 
+      /* Heaxify turquoise */
       --brand: #14b8b0;
       --brand-glow: rgba(20, 184, 176, 0.35);
     }
@@ -41,6 +43,7 @@
       justify-content: center;
     }
 
+    /* CARD WITH TURQUOISE FRAME */
     .card {
       background: var(--card-bg);
       border-radius: 28px;
@@ -55,18 +58,19 @@
         0 0 40px var(--brand-glow);
     }
 
-    /* LOGO — larger, optically centered */
+    /* LOGO — desktop (clean centered) */
     .logo {
-      width: 2080px;
-      max-width: 96vw;
+      width: 1200px;       /* desktop size */
+      max-width: 90vw;
       height: auto;
       display: block;
-      margin: 0 auto 32px;   /* ↓ 2 satır azaltıldı */
-      transform: translateX(-12%); /* ↓ iki harf kadar daha sola */
+      margin: 0 auto 32px; /* logo ↔ text spacing */
+      transform: none;     /* no optical offset on desktop */
     }
 
+    /* LAUNCHING SOON */
     .launching {
-      font-size: clamp(3.6rem, 6vw, 4.8rem);
+      font-size: clamp(3.2rem, 5vw, 4.4rem);
       font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 32px;
@@ -78,9 +82,24 @@
       color: var(--text-soft);
     }
 
-    @media (max-width: 600px) {
+    /* Mobile/Tablet: keep big logo + optical centering */
+    @media (max-width: 1024px) {
       .card { padding: 56px 28px; }
-      .logo { margin-bottom: 24px; }
+
+      .logo {
+        width: 2080px;         /* big on mobile */
+        max-width: 96vw;
+        transform: translateX(-12%);
+        margin-bottom: 32px;
+      }
+    }
+
+    /* Desktop: a bit more breathing room */
+    @media (min-width: 1024px) {
+      .card {
+        padding-top: 96px;
+        padding-bottom: 96px;
+      }
     }
   </style>
 </head>
@@ -88,8 +107,13 @@
 <body>
   <main class="wrapper">
     <section class="card">
+      <!-- LOGO -->
       <img src="logo.png" alt="Heaxify logo" class="logo" />
+
+      <!-- MAIN TEXT -->
       <div class="launching">Launching soon</div>
+
+      <!-- FOOTER -->
       <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
