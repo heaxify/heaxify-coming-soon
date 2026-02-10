@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -44,58 +45,61 @@
     .card {
       background: var(--card-bg);
       border-radius: 28px;
-      padding: 88px 84px;
+      padding: 78px 84px;     /* slightly less top padding so content sits higher */
       text-align: center;
       width: 100%;
-      max-width: 1100px; /* desktop'ta daha geniş */
+      max-width: 1100px;
       border: 4px solid var(--brand);
       box-shadow:
         0 0 0 6px rgba(20, 184, 176, 0.08),
         0 25px 60px rgba(15, 23, 42, 0.08),
         0 0 40px var(--brand-glow);
-      overflow: hidden; /* kart dışına taşma olursa gizle */
+      overflow: hidden;
     }
 
-    /* DESKTOP DEFAULT: Logo kartı ASLA taşmasın */
+    /* DESKTOP DEFAULT */
     .logo {
-      width: 920px;        /* desktop için ideal */
-      max-width: 100%;     /* kritik: kart genişliğini aşamaz */
+      width: 920px;
+      max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 28px;
-      transform: none;     /* desktop'ta optik kaydırma yok */
+      margin: 0 auto 18px;  /* tighter gap to move text up */
+      transform: none;
     }
 
     .launching {
-      font-size: clamp(3rem, 3.6vw, 4.1rem);
+      font-family: 'Caveat', cursive;   /* soft handwritten, readable */
+      text-transform: uppercase;         /* ALL CAPS */
+      font-size: clamp(3.2rem, 3.8vw, 4.3rem);
       font-weight: 600;
-      letter-spacing: -0.02em;
-      margin: 18px 0 28px;
+      letter-spacing: 0.02em;
+      margin: 6px 0 22px;               /* pulls content upward */
+      line-height: 1.05;
     }
 
     .footer {
-      margin-top: 16px;
+      margin-top: 10px;
       font-size: 0.95rem;
       color: var(--text-soft);
     }
 
-    /* TABLET + MOBILE: Senin beğendiğin görüntü korunur */
+    /* TABLET + MOBILE */
     @media (max-width: 1024px) {
       .card {
-        padding: 56px 28px;
+        padding: 52px 28px; /* slightly less padding so it's higher on mobile too */
         max-width: 860px;
       }
 
       .logo {
-        width: 2080px;       /* mobilde büyük */
-        max-width: 96vw;     /* mobilde ekrana sığ */
-        transform: translateX(-12%); /* mobilde optik merkez */
-        margin-bottom: 32px;
+        width: 2080px;
+        max-width: 96vw;
+        transform: translateX(-12%);
+        margin-bottom: 22px;
       }
 
       .launching {
-        font-size: clamp(2.6rem, 7vw, 3.6rem);
-        margin-bottom: 24px;
+        font-size: clamp(2.9rem, 8vw, 3.8rem);
+        margin-bottom: 18px;
       }
     }
   </style>
@@ -105,7 +109,9 @@
   <main class="wrapper">
     <section class="card">
       <img src="logo.png" alt="Heaxify logo" class="logo" />
-      <div class="launching">Launching soon</div>
+
+      <div class="launching">LAUNCHING SOON!</div>
+
       <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
