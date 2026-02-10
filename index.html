@@ -58,7 +58,7 @@
 
     /* DESKTOP */
     .logo {
-      width: 920px;
+      width: 1380px;              /* 920 × 1.5 */
       max-width: 100%;
       height: auto;
       display: block;
@@ -66,9 +66,8 @@
       transform: none;
     }
 
-    /* LAUNCHING SOON — ~2x size */
     .launching {
-      font-size: clamp(6rem, 7vw, 7.5rem); /* 2x dengeli */
+      font-size: clamp(6rem, 7vw, 7.5rem); /* desktop aynı */
       font-weight: 600;
       letter-spacing: -0.01em;
       margin: 0 0 28px;
@@ -90,15 +89,17 @@
       }
 
       .logo {
-        width: 2080px;
+        width: 3120px;             /* 2080 × 1.5 */
         max-width: 96vw;
         transform: translateX(-12%);
         margin-bottom: 16px;
       }
 
+      /* ↓ TAŞMAYI BİTİREN AYAR */
       .launching {
-        font-size: clamp(3.6rem, 11vw, 4.8rem); /* mobil ~2x */
+        font-size: clamp(3.2rem, 9.5vw, 4.2rem);
         margin-bottom: 24px;
+        line-height: 1;
       }
     }
   </style>
