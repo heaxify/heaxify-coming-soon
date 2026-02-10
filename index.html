@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,14 +17,11 @@
       --text-main: #0f172a;
       --text-soft: #475569;
 
-      /* Heaxify brand */
       --brand: #14b8b0;
       --brand-glow: rgba(20, 184, 176, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -59,39 +55,32 @@
         0 0 40px var(--brand-glow);
     }
 
-    /* LOGO — large, centered, optically balanced */
+    /* LOGO */
     .logo {
-      width: 2080px;          /* 4x original */
-      max-width: 96vw;        /* responsive safety */
+      width: 2080px;
+      max-width: 96vw;
       height: auto;
       display: block;
       margin: 0 auto 64px;
-
-      /* Optical centering fix */
-      transform: translateX(-6%);
+      transform: translateX(-9%);
     }
 
     .launching {
       font-size: clamp(3.6rem, 6vw, 4.8rem);
       font-weight: 600;
       letter-spacing: -0.02em;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
 
     .footer {
-      margin-top: 32px;
+      margin-top: 24px;
       font-size: 0.9rem;
       color: var(--text-soft);
     }
 
     @media (max-width: 600px) {
-      .card {
-        padding: 56px 28px;
-      }
-
-      .logo {
-        margin-bottom: 48px;
-      }
+      .card { padding: 56px 28px; }
+      .logo { margin-bottom: 48px; }
     }
   </style>
 </head>
@@ -99,22 +88,11 @@
 <body>
   <main class="wrapper">
     <section class="card">
-      <!-- LOGO -->
-      <img
-        src="logo.png"
-        alt="Heaxify logo"
-        class="logo"
-      />
+      <img src="logo.png" alt="Heaxify logo" class="logo" />
 
-      <!-- MAIN TEXT -->
-      <div class="launching">
-        Launching soon
-      </div>
+      <div class="launching">Launching soon</div>
 
-      <!-- FOOTER -->
-      <div class="footer">
-        © 2026 Heaxify
-      </div>
+      <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
 </body>
