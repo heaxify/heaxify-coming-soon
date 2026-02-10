@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Fonts -->
+  <!-- Fonts: Inter (base) + soft handwritten for headline -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -28,7 +28,6 @@
       margin: 0;
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
       background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -40,12 +39,14 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: flex-start;      /* move content up */
+      padding-top: 64px;           /* overall top offset */
     }
 
     .card {
       background: var(--card-bg);
       border-radius: 28px;
-      padding: 78px 84px;     /* slightly less top padding so content sits higher */
+      padding: 84px 84px 72px;
       text-align: center;
       width: 100%;
       max-width: 1100px;
@@ -63,30 +64,35 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 18px;  /* tighter gap to move text up */
+      margin: 0 auto 22px;
       transform: none;
     }
 
+    /* LAUNCHING SOON — softer, readable handwritten */
     .launching {
-      font-family: 'Caveat', cursive;   /* soft handwritten, readable */
-      text-transform: uppercase;         /* ALL CAPS */
-      font-size: clamp(3.2rem, 3.8vw, 4.3rem);
-      font-weight: 600;
+      font-family: 'Caveat', 'Inter', system-ui, sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(3.2rem, 3.4vw, 4.4rem);
+      font-weight: 700;
       letter-spacing: 0.02em;
-      margin: 6px 0 22px;               /* pulls content upward */
-      line-height: 1.05;
+      margin: 8px 0 24px;
+      line-height: 1;
     }
 
     .footer {
-      margin-top: 10px;
+      margin-top: 14px;
       font-size: 0.95rem;
       color: var(--text-soft);
     }
 
     /* TABLET + MOBILE */
     @media (max-width: 1024px) {
+      .wrapper {
+        padding-top: 40px;         /* a bit up on mobile too */
+      }
+
       .card {
-        padding: 52px 28px; /* slightly less padding so it's higher on mobile too */
+        padding: 56px 28px;
         max-width: 860px;
       }
 
@@ -94,13 +100,19 @@
         width: 2080px;
         max-width: 96vw;
         transform: translateX(-12%);
-        margin-bottom: 22px;
+        margin-bottom: 28px;
       }
 
       .launching {
-        font-size: clamp(2.9rem, 8vw, 3.8rem);
-        margin-bottom: 18px;
+        font-size: clamp(2.8rem, 7vw, 3.8rem);
+        margin-bottom: 20px;
       }
+    }
+
+    /* Very small screens */
+    @media (max-width: 420px) {
+      .wrapper { padding-top: 28px; }
+      .launching { letter-spacing: 0.01em; }
     }
   </style>
 </head>
@@ -109,9 +121,7 @@
   <main class="wrapper">
     <section class="card">
       <img src="logo.png" alt="Heaxify logo" class="logo" />
-
       <div class="launching">LAUNCHING SOON!</div>
-
       <div class="footer">© 2026 Heaxify</div>
     </section>
   </main>
