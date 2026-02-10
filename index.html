@@ -13,10 +13,14 @@
 
   <style>
     :root {
-      --bg: #f4f8fb;
+      --bg: #eef6fb;
+      --card-bg: #ffffff;
       --text-main: #0f172a;
       --text-soft: #475569;
-      --brand: #0f766e;
+
+      /* Heaxify turquoise */
+      --brand: #14b8b0;
+      --brand-glow: rgba(20, 184, 176, 0.35);
     }
 
     * {
@@ -29,64 +33,88 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(
-        circle at top,
-        #ffffff 0%,
-        var(--bg) 60%
-      );
+      background:
+        radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-main);
     }
 
-    .container {
-      text-align: center;
-      padding: 40px 24px;
-      max-width: 720px;
+    .wrapper {
+      padding: 24px;
       width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
-    /* LOGO — 4x */
+    /* CARD WITH TURQUOISE FRAME */
+    .card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 72px 64px;
+      text-align: center;
+      max-width: 860px;
+      width: 100%;
+
+      border: 4px solid var(--brand);
+      box-shadow:
+        0 0 0 6px rgba(20, 184, 176, 0.08),
+        0 25px 60px rgba(15, 23, 42, 0.08),
+        0 0 40px var(--brand-glow);
+    }
+
+    /* LOGO — 3x MORE */
     .logo {
-      width: 320px; /* önce ~80px idi → 4x */
-      max-width: 80vw;
+      width: 520px;
+      max-width: 85vw;
+      margin-bottom: 64px;
+    }
+
+    /* LAUNCHING SOON — 3x */
+    .launching {
+      font-size: clamp(3.6rem, 6vw, 4.8rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
       margin-bottom: 48px;
     }
 
-    /* LAUNCHING SOON */
-    .launching {
-      font-size: clamp(2.6rem, 5vw, 3.6rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
+    .footer {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: var(--text-soft);
     }
 
-    /* FOOTER */
-    .footer {
-      margin-top: 64px;
-      font-size: 0.85rem;
-      color: var(--text-soft);
+    @media (max-width: 600px) {
+      .card {
+        padding: 56px 28px;
+      }
+
+      .logo {
+        width: 420px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-    <!-- Logo -->
-    <img
-      src="logo.png"
-      alt="Heaxify logo"
-      class="logo"
-    />
+  <main class="wrapper">
+    <section class="card">
+      <!-- LOGO -->
+      <img
+        src="logo.png"
+        alt="Heaxify logo"
+        class="logo"
+      />
 
-    <!-- Main text -->
-    <div class="launching">
-      Launching soon
-    </div>
+      <!-- MAIN TEXT -->
+      <div class="launching">
+        Launching soon
+      </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      © 2026 Heaxify
-    </div>
+      <!-- FOOTER -->
+      <div class="footer">
+        © 2026 Heaxify
+      </div>
+    </section>
   </main>
 </body>
 </html>
