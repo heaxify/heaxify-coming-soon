@@ -24,9 +24,8 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
       background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 65%);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -34,8 +33,8 @@
     }
 
     .wrapper {
-      padding: 28px;
       width: 100%;
+      padding: 28px;
       display: flex;
       justify-content: center;
     }
@@ -43,8 +42,7 @@
     .card {
       background: var(--card-bg);
       border-radius: 28px;
-      padding: 88px 84px;
-      text-align: center;
+      padding: 48px 84px;
       width: 100%;
       max-width: 1100px;
       border: 4px solid var(--brand);
@@ -52,64 +50,82 @@
         0 0 0 6px rgba(20, 184, 176, 0.08),
         0 25px 60px rgba(15, 23, 42, 0.08),
         0 0 40px var(--brand-glow);
-      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      min-height: 80vh;
     }
 
-    /* DESKTOP */
+    /* LOGO üstte sabit */
     .logo {
       width: 1380px;
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 14px;
-      transform: none;
+      margin: 0 auto 20px;
+    }
+
+    /* Metni ortalamak için */
+    .center-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .launching {
-      font-size: clamp(6rem, 7vw, 7.5rem);
+      font-size: clamp(5.5rem, 6.5vw, 7rem);
       font-weight: 600;
-      letter-spacing: -0.01em;
-      margin: 0 0 28px;
       text-transform: uppercase;
-      line-height: 0.95;
+      letter-spacing: -0.01em;
+      line-height: 1;
     }
 
     .footer {
-      margin-top: 16px;
+      text-align: center;
       font-size: 0.95rem;
       color: var(--text-soft);
+      margin-top: 20px;
     }
 
-    /* MOBILE FIX (taşma düzeltildi) */
+    /* MOBILE */
     @media (max-width: 1024px) {
+
       .card {
-        padding: 56px 28px;
-        max-width: 860px;
+        padding: 40px 28px;
+        min-height: 85vh;
       }
 
       .logo {
         width: 3120px;
         max-width: 96vw;
         transform: translateX(-12%);
-        margin-bottom: 16px;
       }
 
-      /* ↓ iPhone 12 taşma düzeltmesi */
       .launching {
-        font-size: clamp(3rem, 8.5vw, 3.9rem);
-        line-height: 1;
-        margin-bottom: 24px;
+        font-size: clamp(2.8rem, 8vw, 3.8rem);
       }
     }
+
   </style>
 </head>
 
 <body>
   <main class="wrapper">
     <section class="card">
+      
+      <!-- Logo üstte -->
       <img src="logo.png" alt="Heaxify logo" class="logo" />
-      <div class="launching">LAUNCHING SOON!</div>
+
+      <!-- Ortadaki yazı -->
+      <div class="center-content">
+        <div class="launching">LAUNCHING SOON!</div>
+      </div>
+
+      <!-- Footer altta -->
       <div class="footer">© 2026 Heaxify</div>
+
     </section>
   </main>
 </body>
